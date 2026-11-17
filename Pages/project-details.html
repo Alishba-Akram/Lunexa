@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunexa - Project Details</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white}
+header{background:#10172b;padding:22px 7%;border-bottom:1px solid #29314d}
+header a{color:#a99aff;text-decoration:none;font-weight:bold}
+main{max-width:1100px;margin:40px auto;padding:0 22px}
+.back{color:#a99aff;text-decoration:none;font-size:14px}
+h1{margin:25px 0 10px;font-size:32px}
+.subtitle{color:#929bb4;line-height:1.7}
+.layout{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;margin-top:30px}
+.card{background:#151e35;border:1px solid #29314d;border-radius:14px;padding:25px;margin-bottom:20px}
+h3{margin-bottom:20px}
+label{display:block;color:#b7bfd4;font-size:13px;margin:16px 0 8px}
+input,textarea,select{width:100%;padding:13px;background:#0e162b;border:1px solid #343d5b;border-radius:8px;color:white;outline:none}
+textarea{height:110px;resize:vertical}
+.btn{background:#7966ed;color:white;border:0;padding:13px 20px;border-radius:8px;margin-top:20px;cursor:pointer}
+.info{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #303750;color:#aab2c8;font-size:14px;gap:12px}
+.info strong{color:white}
+.progress{height:9px;background:#343d5b;border-radius:10px;margin:15px 0}
+.progress div{height:9px;width:75%;background:#9583ff;border-radius:10px}
+@media(max-width:750px){.layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><a href="../index.html">✦ LUNEXA</a></header>
+<main>
+<a class="back" href="projects.html">← Back to Projects</a>
+<h1>Create / View Project</h1>
+<p class="subtitle">Manage project information, team members and project progress.</p>
+
+<div class="layout">
+<div>
+<div class="card">
+<h3>Project Information</h3>
+<form action="#">
+<label>Project Name</label>
+<input type="text" placeholder="Enter project name">
+
+<label>Project Description</label>
+<textarea placeholder="Describe your project..."></textarea>
+
+<label>Project Category</label>
+<select><option>Web Development</option><option>Mobile Application</option><option>Marketing</option><option>Design</option></select>
+
+<label>Start Date</label>
+<input type="date">
+
+<label>Deadline</label>
+<input type="date">
+
+<label>Project Status</label>
+<select><option>In Progress</option><option>Not Started</option><option>Completed</option><option>On Hold</option></select>
+
+<button class="btn" type="submit">Save Project</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Project Description</h3>
+<p class="subtitle">The Website Redesign project aims to create a clean, modern and responsive website experience for our customers.</p>
+</div>
+</div>
+
+<div>
+<div class="card">
+<h3>Project Overview</h3>
+<div class="info"><span>Project Manager</span><strong>Sarah Ahmed</strong></div>
+<div class="info"><span>Start Date</span><strong>Nov 01, 2026</strong></div>
+<div class="info"><span>Deadline</span><strong>Dec 15, 2026</strong></div>
+<div class="info"><span>Team Members</span><strong>4 Members</strong></div>
+<div class="info"><span>Status</span><strong>In Progress</strong></div>
+<h3 style="margin-top:25px">Overall Progress</h3>
+<div class="progress"><div></div></div>
+<p class="subtitle">75% completed</p>
+</div>
+
+<div class="card">
+<h3>Assigned Team</h3>
+<div class="info"><span>Sarah Ahmed</span><strong>Manager</strong></div>
+<div class="info"><span>Ali Khan</span><strong>Developer</strong></div>
+<div class="info"><span>Usama</span><strong>Designer</strong></div>
+<div class="info"><span>Fatima Noor</span><strong>Tester</strong></div>
+</div>
+</div>
+</div>
+</main>
+</body>
+</html>

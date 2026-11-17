@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunexa - Tasks</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white;display:flex}
+.sidebar{width:230px;min-height:100vh;background:#10172b;padding:28px 18px;position:fixed}
+.logo{font-size:25px;color:#a99aff;font-weight:bold;margin-bottom:40px}
+.sidebar a{display:block;padding:13px;margin:6px 0;color:#aab2c8;text-decoration:none;border-radius:8px;font-size:14px}
+.sidebar a:hover,.sidebar .active{background:#29254e;color:#b5a8ff}
+.main{margin-left:230px;width:calc(100% - 230px);padding:35px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;gap:15px}
+.header p{color:#929bb4;margin-top:8px}
+.btn{background:#7966ed;color:white;text-decoration:none;padding:12px 18px;border-radius:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:25px}
+.card{background:#151e35;border:1px solid #29314d;border-radius:13px;padding:22px}
+.card small{color:#aab2c8}
+.card h2{font-size:29px;margin-top:12px}
+.table-wrap{overflow-x:auto;background:#151e35;border:1px solid #29314d;border-radius:13px;padding:22px}
+table{width:100%;border-collapse:collapse;min-width:650px}
+th,td{text-align:left;padding:17px 12px;border-bottom:1px solid #303750;font-size:13px}
+th{color:#929bb4}
+td{color:#dce0ec}
+.status{padding:7px 10px;border-radius:20px;background:#203c37;color:#60d6a6;font-size:11px}
+.pending{background:#41372a;color:#ffc36b}
+.review{background:#29254e;color:#b5a8ff}
+.priority{color:#ff8585}
+@media(max-width:700px){body{display:block}.sidebar{position:static;width:100%;min-height:auto}.sidebar a{display:inline-block}.main{margin:0;width:100%;padding:20px}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+<div class="logo">✦ Lunexa</div>
+<a href="dashboard.html">▦ Dashboard</a>
+<a href="projects.html">▣ Projects</a>
+<a class="active" href="tasks.html">✓ My Tasks</a>
+<a href="calendar.html">▦ Calendar</a>
+<a href="team.html">♙ Team Members</a>
+<a href="messages.html">✉ Messages</a>
+<a href="reports.html">▤ Reports</a>
+<a href="profile.html">♙ My Profile</a>
+<a href="settings.html">⚙ Settings</a>
+<a href="../index.html">← Home</a>
+</aside>
+<main class="main">
+<div class="header"><div><h1>My Tasks</h1><p>Organize your work and keep track of deadlines.</p></div><a class="btn" href="project-details.html">＋ Add Task</a></div>
+
+<div class="stats">
+<div class="card"><small>Total Tasks</small><h2>48</h2></div>
+<div class="card"><small>Completed</small><h2>32</h2></div>
+<div class="card"><small>Pending</small><h2>16</h2></div>
+</div>
+
+<div class="table-wrap">
+<h3 style="margin-bottom:20px">Task List</h3>
+<table>
+<thead><tr><th>Task Name</th><th>Project</th><th>Assigned To</th><th>Due Date</th><th>Priority</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Design Homepage</td><td>Website Redesign</td><td>Sarah</td><td>Nov 19, 2026</td><td class="priority">High</td><td><span class="status">Completed</span></td></tr>
+<tr><td>API Integration</td><td>Mobile App</td><td>Ali</td><td>Nov 20, 2026</td><td class="priority">High</td><td><span class="status pending">Pending</span></td></tr>
+<tr><td>Create Wireframes</td><td>Website Redesign</td><td>Hassan</td><td>Nov 22, 2026</td><td>Medium</td><td><span class="status review">In Review</span></td></tr>
+<tr><td>Test Login Page</td><td>Mobile App</td><td>Fatima</td><td>Nov 24, 2026</td><td>Low</td><td><span class="status pending">Pending</span></td></tr>
+<tr><td>Prepare Campaign</td><td>Marketing</td><td>Sarah</td><td>Nov 25, 2026</td><td>Medium</td><td><span class="status">Completed</span></td></tr>
+<tr><td>Fix Navigation</td><td>Website Redesign</td><td>Ali</td><td>Nov 27, 2026</td><td class="priority">High</td><td><span class="status review">In Progress</span></td></tr>
+</tbody>
+</table>
+</div>
+</main>
+</body>
+</html>

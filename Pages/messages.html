@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunexa - Messages</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white}
+header{padding:22px 7%;background:#10172b}
+header a{color:#a99aff;text-decoration:none}
+main{max-width:1050px;margin:35px auto;padding:0 20px}
+.chat{display:grid;grid-template-columns:300px 1fr;background:#151e35;border:1px solid #29314d;border-radius:14px;overflow:hidden;min-height:570px}
+.contacts{border-right:1px solid #303750;padding:22px}
+.contacts h2{margin-bottom:22px}
+.person{padding:17px 10px;border-bottom:1px solid #303750;color:#e5e8f1}
+.person small{display:block;color:#929bb4;margin-top:7px}
+.person.active{background:#29254e;border-radius:8px}
+.conversation{display:flex;flex-direction:column}
+.chat-head{padding:22px;border-bottom:1px solid #303750}
+.chat-head p{color:#60d6a6;font-size:12px;margin-top:7px}
+.chat-body{padding:25px;flex:1}
+.message{padding:13px 16px;background:#242d48;border-radius:12px;max-width:75%;margin-bottom:15px;font-size:14px;line-height:1.6}
+.message.mine{background:#514487;margin-left:auto}
+.time{color:#929bb4;font-size:10px;display:block;margin-top:7px}
+.chat-input{padding:20px;border-top:1px solid #303750;display:flex;gap:10px}
+input{min-width:0;flex:1;background:#0e162b;border:1px solid #343d5b;padding:13px;border-radius:8px;color:white}
+button{background:#7966ed;border:0;color:white;padding:12px 18px;border-radius:8px}
+@media(max-width:650px){.chat{grid-template-columns:1fr}.contacts{border-right:0;border-bottom:1px solid #303750}.person{display:inline-block;width:48%;vertical-align:top}.chat-body{min-height:280px}}
+</style>
+</head>
+<body>
+<header><a href="../index.html">✦ LUNEXA</a></header>
+<main>
+<h1 style="margin-bottom:10px">Messages</h1>
+<p style="color:#929bb4;margin-bottom:25px">Stay connected with your team.</p>
+<div class="chat">
+<div class="contacts">
+<h2>Conversations</h2>
+<div class="person active">Sarah Ahmed<small>Let's review the project.</small></div>
+<div class="person">Ali Khan<small>API work is in progress.</small></div>
+<div class="person">Usama<small>Design files are ready.</small></div>
+<div class="person">Fatima Noor<small>Testing has started.</small></div>
+</div>
+<div class="conversation">
+<div class="chat-head"><h3>Sarah Ahmed</h3><p>● Online</p></div>
+<div class="chat-body">
+<div class="message">Hello! How is the website redesign going?<span class="time">10:30 AM</span></div>
+<div class="message mine">It's going well. The homepage design is almost complete.<span class="time">10:32 AM</span></div>
+<div class="message">Great! Please share the updated design when it's ready.<span class="time">10:35 AM</span></div>
+<div class="message mine">Sure, I'll share it with the team today.<span class="time">10:37 AM</span></div>
+</div>
+<form class="chat-input" action="#">
+<input type="text" placeholder="Write a message...">
+<button type="submit">Send</button>
+</form>
+</div>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunexa Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b1020;
+    color: #fff;
+    display: flex;
+}
+
+.sidebar {
+    width: 245px;
+    min-height: 100vh;
+    background: #10172b;
+    padding: 30px 20px;
+    position: fixed;
+    border-right: 1px solid #29314d;
+}
+
+.logo {
+    font-size: 26px;
+    color: #a99aff;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.menu-title {
+    color: #747f9c;
+    font-size: 11px;
+    margin: 25px 10px 12px;
+    letter-spacing: 1px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 14px;
+    margin: 6px 0;
+    border-radius: 9px;
+    text-decoration: none;
+    color: #aab2c8;
+    font-size: 14px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #29254e;
+    color: #b5a8ff;
+}
+
+.main {
+    margin-left: 245px;
+    width: calc(100% - 245px);
+    padding: 35px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.topbar p {
+    color: #929bb4;
+    margin-top: 8px;
+}
+
+.avatar {
+    background: #7966ed;
+    padding: 13px;
+    border-radius: 50%;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #151e35;
+    border: 1px solid #29314d;
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.card small {
+    color: #9da8c1;
+}
+
+.card h2 {
+    font-size: 30px;
+    margin: 15px 0 8px;
+}
+
+.green {
+    color: #4bd6a0;
+    font-size: 12px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 22px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.section-heading a {
+    color: #a99aff;
+    text-decoration: none;
+}
+
+.project {
+    padding: 18px 0;
+    border-bottom: 1px solid #303750;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.project p {
+    color: #929bb4;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.progress {
+    height: 7px;
+    background: #343d5b;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.progress div {
+    height: 7px;
+    background: #9583ff;
+    border-radius: 10px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 0;
+    border-bottom: 1px solid #303750;
+    gap: 10px;
+}
+
+.task:last-child {
+    border: none;
+}
+
+.task p {
+    color: #929bb4;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.status {
+    background: #263c38;
+    color: #60d6a6;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.pending {
+    background: #41372a;
+    color: #ffc36b;
+}
+
+@media(max-width: 950px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 600px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .sidebar a {
+        display: inline-block;
+    }
+
+    .main {
+        margin: 0;
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<aside class="sidebar">
+    <div class="logo">✦ Lunexa</div>
+
+    <div class="menu-title">WORKSPACE</div>
+    <a href="dashboard.html" class="active">▦ Dashboard</a>
+    <a href="projects.html">▣ Projects</a>
+    <a href="tasks.html">✓ My Tasks</a>
+    <a href="calendar.html">▦ Calendar</a>
+
+    <div class="menu-title">MANAGEMENT</div>
+    <a href="team.html">♙ Team Members</a>
+    <a href="messages.html">✉ Messages</a>
+    <a href="reports.html">▤ Reports</a>
+
+    <div class="menu-title">ACCOUNT</div>
+    <a href="profile.html">♙ My Profile</a>
+    <a href="settings.html">⚙ Settings</a>
+    <a href="../index.html">← Back to Home</a>
+</aside>
+
+<main class="main">
+
+    <div class="topbar">
+        <div>
+            <h1>Dashboard</h1>
+            <p>Welcome back! Here's what's happening with your projects.</p>
+        </div>
+        <div class="avatar">AA</div>
+    </div>
+
+    <section class="stats">
+        <div class="card">
+            <small>Total Projects</small>
+            <h2>24</h2>
+            <span class="green">↑ 12% this month</span>
+        </div>
+
+        <div class="card">
+            <small>Active Tasks</small>
+            <h2>38</h2>
+            <span class="green">↑ 8% this week</span>
+        </div>
+
+        <div class="card">
+            <small>Completed Tasks</small>
+            <h2>186</h2>
+            <span class="green">↑ 18% this month</span>
+        </div>
+
+        <div class="card">
+            <small>Team Members</small>
+            <h2>12</h2>
+            <span class="green">2 new members</span>
+        </div>
+    </section>
+
+    <section class="content-grid">
+
+        <div class="card">
+            <div class="section-heading">
+                <h3>Recent Projects</h3>
+                <a href="projects.html">View All →</a>
+            </div>
+
+            <div class="project">
+                <div class="project-top">
+                    <div>
+                        <h4>Website Redesign</h4>
+                        <p>Design & Development</p>
+                    </div>
+                    <strong>75%</strong>
+                </div>
+                <div class="progress"><div style="width:75%"></div></div>
+            </div>
+
+            <div class="project">
+                <div class="project-top">
+                    <div>
+                        <h4>Mobile Application</h4>
+                        <p>App Development</p>
+                    </div>
+                    <strong>45%</strong>
+                </div>
+                <div class="progress"><div style="width:45%"></div></div>
+            </div>
+
+            <div class="project">
+                <div class="project-top">
+                    <div>
+                        <h4>Marketing Campaign</h4>
+                        <p>Digital Marketing</p>
+                    </div>
+                    <strong>90%</strong>
+                </div>
+                <div class="progress"><div style="width:90%"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-heading">
+                <h3>Recent Tasks</h3>
+                <a href="tasks.html">View All →</a>
+            </div>
+
+            <div class="task">
+                <div>
+                    <h4>Homepage Design</h4>
+                    <p>Today · Sarah</p>
+                </div>
+                <span class="status">Done</span>
+            </div>
+
+            <div class="task">
+                <div>
+                    <h4>API Integration</h4>
+                    <p>Tomorrow · Ali</p>
+                </div>
+                <span class="status pending">Pending</span>
+            </div>
+
+            <div class="task">
+                <div>
+                    <h4>Testing & Review</h4>
+                    <p>Nov 20 · Hassan</p>
+                </div>
+                <span class="status">Active</span>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

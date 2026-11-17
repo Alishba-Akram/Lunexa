@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunexa - Login</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{min-height:100vh;background:#0b1020;color:white;display:grid;place-items:center;padding:20px}
+.login{width:100%;max-width:430px;background:#151e35;border:1px solid #29314d;border-radius:16px;padding:38px}
+.logo{text-align:center;color:#a99aff;font-size:28px;font-weight:bold;margin-bottom:30px}
+h1{text-align:center;margin-bottom:10px}
+p{text-align:center;color:#929bb4;font-size:14px;margin-bottom:28px}
+label{display:block;color:#c4c9dc;font-size:13px;margin:18px 0 8px}
+input{width:100%;padding:14px;background:#0e162b;border:1px solid #343d5b;border-radius:8px;color:white}
+button{width:100%;padding:14px;background:#7966ed;color:white;border:0;border-radius:8px;margin-top:24px;font-weight:bold}
+a{color:#a99aff;text-decoration:none;font-size:13px}
+.links{display:flex;justify-content:space-between;margin-top:18px}
+.bottom{text-align:center;margin-top:25px;color:#929bb4}
+.home{display:block;text-align:center;margin-top:22px}
+</style>
+</head>
+<body>
+<div class="login">
+<div class="logo">✦ Lunexa</div>
+<h1>Welcome Back</h1>
+<p>Sign in to continue to your workspace.</p>
+<form action="#">
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+<label>Password</label>
+<input type="password" placeholder="Enter your password" required>
+<div class="links"><label style="margin:15px 0"><input type="checkbox" style="width:auto"> Remember me</label><a href="forgot-password.html">Forgot Password?</a></div>
+<button type="submit">Sign In</button>
+</form>
+<div class="bottom">Don't have an account? <a href="signup.html">Create Account</a></div>
+<a class="home" href="../index.html">← Back to Home</a>
+</div>
+</body>
+</html>

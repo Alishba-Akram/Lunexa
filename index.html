@@ -1,0 +1,1161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunexa | Project Management</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #090b16;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        header {
+            width: 100%;
+            min-height: 82px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0d1020;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #a99aff;
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav a {
+            color: #b9bdd0;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a99aff;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .login-btn {
+            color: white;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            color: #a99aff;
+        }
+
+        .signup {
+            background: linear-gradient(135deg, #9875ff, #7045e8);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 9px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .signup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(137, 99, 255, 0.3);
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            width: 100%;
+            min-height: 650px;
+            padding: 95px 7% 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 55px;
+            background:
+                radial-gradient(ellipse at 15% 15%, rgba(105, 78, 205, 0.15), transparent 45%),
+                #090b16;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 590px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(151, 119, 255, 0.12);
+            border: 1px solid rgba(151, 119, 255, 0.3);
+            padding: 9px 16px;
+            border-radius: 30px;
+            color: #b7a4ff;
+            font-size: 12px;
+            margin-bottom: 27px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            background: #9d7cff;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5vw, 66px);
+            line-height: 1.13;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+            font-weight: 750;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #b69cff, #7f70ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #a3a8bd;
+            max-width: 500px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #9b79ff, #7048e8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(130, 91, 255, 0.3);
+        }
+
+        .secondary-btn {
+            border: 1px solid #34374d;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 9px;
+            font-size: 14px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .secondary-btn:hover {
+            border-color: #9b79ff;
+            color: #bba8ff;
+        }
+
+        .hero-note {
+            margin-top: 30px;
+            color: #777d94;
+            font-size: 12px;
+        }
+
+        /* DASHBOARD PREVIEW */
+
+        .hero-visual {
+            flex: 1.1;
+            max-width: 650px;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .dashboard-preview {
+            width: 100%;
+            background: #121627;
+            border: 1px solid #30334b;
+            border-radius: 17px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .preview-topbar {
+            height: 52px;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #171c30;
+            border-bottom: 1px solid #2b3046;
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .window-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #77718d;
+        }
+
+        .preview-title {
+            color: #c6c8d7;
+            font-size: 11px;
+        }
+
+        .preview-user {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a58bff, #6c59d9);
+        }
+
+        .preview-body {
+            display: flex;
+            min-height: 360px;
+        }
+
+        .preview-sidebar {
+            width: 145px;
+            padding: 22px 12px;
+            background: #101426;
+            border-right: 1px solid #2b3046;
+            flex-shrink: 0;
+        }
+
+        .preview-brand {
+            color: #b69cff;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 28px;
+            padding-left: 8px;
+        }
+
+        .side-item {
+            color: #858ba3;
+            font-size: 10px;
+            padding: 11px 9px;
+            margin-bottom: 7px;
+            border-radius: 6px;
+        }
+
+        .side-item.active {
+            color: #c4b4ff;
+            background: rgba(145, 112, 255, 0.17);
+        }
+
+        .preview-main {
+            flex: 1;
+            padding: 23px 20px;
+            min-width: 0;
+        }
+
+        .preview-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .preview-heading h3 {
+            font-size: 17px;
+            color: #f0efff;
+        }
+
+        .preview-heading span {
+            color: #9298b0;
+            font-size: 9px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .stat-card {
+            padding: 13px 10px;
+            background: #1a2036;
+            border: 1px solid #30364e;
+            border-radius: 9px;
+        }
+
+        .stat-card small {
+            display: block;
+            color: #9298b0;
+            font-size: 9px;
+            margin-bottom: 9px;
+        }
+
+        .stat-card strong {
+            font-size: 20px;
+            color: white;
+        }
+
+        .stat-card .purple {
+            color: #a78aff;
+        }
+
+        .preview-section-title {
+            font-size: 11px;
+            color: #d7d6e6;
+            margin-bottom: 11px;
+        }
+
+        .project-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 12px 10px;
+            border: 1px solid #2b3046;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background: #181e32;
+        }
+
+        .project-info strong {
+            display: block;
+            font-size: 10px;
+            color: #e5e3f4;
+            margin-bottom: 5px;
+        }
+
+        .project-info small {
+            font-size: 8px;
+            color: #888fa8;
+        }
+
+        .project-status {
+            font-size: 8px;
+            padding: 5px 7px;
+            border-radius: 5px;
+            background: rgba(105, 205, 158, 0.13);
+            color: #72d4a5;
+            white-space: nowrap;
+        }
+
+        .project-status.pending {
+            color: #e9c477;
+            background: rgba(233,196,119,0.12);
+        }
+
+        /* FLOATING LABELS */
+
+        .floating-card {
+            position: absolute;
+            background: #20263b;
+            border: 1px solid #414663;
+            padding: 12px 16px;
+            border-radius: 11px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .floating-card strong {
+            display: block;
+            font-size: 11px;
+            color: #eeeaff;
+            margin-bottom: 4px;
+        }
+
+        .floating-card small {
+            color: #a4a8bb;
+            font-size: 9px;
+        }
+
+        .floating-one {
+            top: 0;
+            right: -25px;
+        }
+
+        .floating-two {
+            bottom: 0;
+            left: -30px;
+        }
+
+        .floating-icon {
+            display: inline-flex;
+            width: 23px;
+            height: 23px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            background: #7559d7;
+            margin-right: 6px;
+            color: white;
+        }
+
+        /* TRUST SECTION */
+
+        .trusted {
+            padding: 35px 7% 55px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .trusted p {
+            color: #777d94;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 27px;
+        }
+
+        .trusted-companies {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 65px;
+            flex-wrap: wrap;
+        }
+
+        .trusted-companies span {
+            font-size: 17px;
+            font-weight: bold;
+            color: #777d94;
+        }
+
+        /* FEATURES */
+
+        .features {
+            padding: 90px 7%;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: #a991ff;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 17px;
+        }
+
+        .section-heading {
+            font-size: 38px;
+            letter-spacing: -1px;
+            margin-bottom: 17px;
+        }
+
+        .section-description {
+            max-width: 580px;
+            margin: auto;
+            color: #999fb5;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .feature-card {
+            background: #121729;
+            border: 1px solid #292f46;
+            border-radius: 14px;
+            padding: 30px 25px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #8066df;
+        }
+
+        .feature-icon {
+            width: 47px;
+            height: 47px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(151, 119, 255, 0.15);
+            border-radius: 12px;
+            font-size: 22px;
+            margin-bottom: 22px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 13px;
+        }
+
+        .feature-card p {
+            color: #969cb1;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* CTA SECTION */
+
+        .cta {
+            margin: 20px 7% 90px;
+            padding: 65px 25px;
+            text-align: center;
+            background: linear-gradient(120deg, #211b43, #171c38);
+            border: 1px solid #38345e;
+            border-radius: 18px;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #b0b2c8;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 35px 7%;
+            background: #0d1020;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            color: #a99aff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        footer p {
+            color: #858ba1;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #999fb5;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: #b69cff;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            header {
+                padding: 0 4%;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+                gap: 30px;
+            }
+
+            .floating-one {
+                right: -5px;
+            }
+
+            .floating-two {
+                left: -5px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            header {
+                padding: 20px 5%;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 75px 6% 80px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-visual {
+                width: 100%;
+                max-width: 650px;
+                margin: 25px auto 0;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trusted-companies {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-buttons {
+                gap: 12px;
+            }
+
+            .signup {
+                padding: 10px 14px;
+                font-size: 11px;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                gap: 12px;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                padding: 13px 16px;
+                font-size: 12px;
+            }
+
+            .preview-sidebar {
+                width: 95px;
+                padding: 15px 7px;
+            }
+
+            .preview-brand {
+                font-size: 12px;
+                padding-left: 3px;
+            }
+
+            .side-item {
+                font-size: 8px;
+                padding: 9px 5px;
+            }
+
+            .preview-main {
+                padding: 15px 10px;
+            }
+
+            .stats {
+                gap: 5px;
+            }
+
+            .stat-card {
+                padding: 10px 6px;
+            }
+
+            .stat-card small {
+                font-size: 7px;
+            }
+
+            .stat-card strong {
+                font-size: 16px;
+            }
+
+            .project-row {
+                padding: 9px 6px;
+            }
+
+            .project-info strong {
+                font-size: 8px;
+            }
+
+            .project-status {
+                font-size: 7px;
+            }
+
+            .floating-card {
+                padding: 9px 10px;
+            }
+
+            .floating-card strong {
+                font-size: 9px;
+            }
+
+            .floating-card small {
+                font-size: 8px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                font-size: 29px;
+            }
+
+            .cta h2 {
+                font-size: 27px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+
+        <div class="logo">
+            ✦ Lunexa
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pages/dashboard.html">Dashboard</a>
+            <a href="pages/projects.html">Projects</a>
+            <a href="pages/team.html">Team</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="auth/login.html" class="login-btn">Login</a>
+            <a href="auth/signup.html" class="signup">Get Started</a>
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                The Future of Project Management
+            </div>
+
+            <h1>
+                Manage Work.<br>
+                Empower <span>Teams.</span>
+            </h1>
+
+            <p class="hero-description">
+                Bring your projects, tasks, and team together in one powerful
+                workspace. Plan smarter, collaborate better, and achieve more
+                with Lunexa.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="auth/signup.html" class="primary-btn">
+                    Get Started Free &nbsp; →
+                </a>
+
+                <a href="pages/dashboard.html" class="secondary-btn">
+                    Explore Dashboard
+                </a>
+            </div>
+
+            <p class="hero-note">
+                ✦ &nbsp; Everything your team needs to work better together.
+            </p>
+
+        </div>
+
+
+        <!-- DASHBOARD VISUAL -->
+        <div class="hero-visual">
+
+            <div class="dashboard-preview">
+
+                <div class="preview-topbar">
+
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="preview-title">
+                        Lunexa Workspace
+                    </div>
+
+                    <div class="preview-user"></div>
+
+                </div>
+
+
+                <div class="preview-body">
+
+                    <aside class="preview-sidebar">
+
+                        <div class="preview-brand">
+                            ✦ Lunexa
+                        </div>
+
+                        <div class="side-item active">▦ Dashboard</div>
+                        <div class="side-item">▣ Projects</div>
+                        <div class="side-item">✓ My Tasks</div>
+                        <div class="side-item">▦ Calendar</div>
+                        <div class="side-item">♙ Team</div>
+                        <div class="side-item">✉ Messages</div>
+                        <div class="side-item">▤ Reports</div>
+
+                    </aside>
+
+
+                    <main class="preview-main">
+
+                        <div class="preview-heading">
+                            <h3>Overview</h3>
+                            <span>My Workspace</span>
+                        </div>
+
+
+                        <div class="stats">
+
+                            <div class="stat-card">
+                                <small>Total Projects</small>
+                                <strong>24</strong>
+                            </div>
+
+                            <div class="stat-card">
+                                <small>Completed</small>
+                                <strong class="purple">18</strong>
+                            </div>
+
+                            <div class="stat-card">
+                                <small>Team Members</small>
+                                <strong>12</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="preview-section-title">
+                            Recent Projects
+                        </div>
+
+
+                        <div class="project-row">
+
+                            <div class="project-info">
+                                <strong>Website Redesign</strong>
+                                <small>Design Team · 12 Tasks</small>
+                            </div>
+
+                            <span class="project-status">
+                                Completed
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-row">
+
+                            <div class="project-info">
+                                <strong>Mobile App Development</strong>
+                                <small>Development · 18 Tasks</small>
+                            </div>
+
+                            <span class="project-status pending">
+                                In Progress
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-row">
+
+                            <div class="project-info">
+                                <strong>Marketing Campaign</strong>
+                                <small>Marketing Team · 8 Tasks</small>
+                            </div>
+
+                            <span class="project-status">
+                                Active
+                            </span>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+
+            <!-- FLOATING CARDS -->
+
+            <div class="floating-card floating-one">
+                <strong>
+                    <span class="floating-icon">✓</span>
+                    Task Completed!
+                </strong>
+                <small>Your team is doing great</small>
+            </div>
+
+
+            <div class="floating-card floating-two">
+                <strong>
+                    <span class="floating-icon">♙</span>
+                    Team Collaboration
+                </strong>
+                <small>12 members working together</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRUSTED SECTION -->
+    <section class="trusted">
+
+        <p>One workspace. Endless possibilities.</p>
+
+        <div class="trusted-companies">
+            <span>✦ Creative</span>
+            <span>◈ Innovate</span>
+            <span>⬡ TechFlow</span>
+            <span>✧ DesignHub</span>
+            <span>◉ WorkSpace</span>
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+
+        <div class="section-tag">
+            Powerful Features
+        </div>
+
+        <h2 class="section-heading">
+            Everything You Need to Succeed
+        </h2>
+
+        <p class="section-description">
+            Lunexa gives your team all the tools needed to organize work,
+            manage projects, track progress, and collaborate from one place.
+        </p>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">▣</div>
+
+                <h3>Project Management</h3>
+
+                <p>
+                    Create projects, organize workflows, set deadlines,
+                    and keep every project moving in the right direction.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">✓</div>
+
+                <h3>Task Management</h3>
+
+                <p>
+                    Assign tasks, set priorities, monitor progress,
+                    and make sure nothing gets missed.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">♙</div>
+
+                <h3>Team Collaboration</h3>
+
+                <p>
+                    Bring your team together, share responsibilities,
+                    and work toward common goals.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">▦</div>
+
+                <h3>Smart Calendar</h3>
+
+                <p>
+                    Keep track of important deadlines, meetings,
+                    and upcoming activities in one organized calendar.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">✉</div>
+
+                <h3>Team Communication</h3>
+
+                <p>
+                    Stay connected with your team through organized
+                    conversations and project discussions.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">▤</div>
+
+                <h3>Reports & Analytics</h3>
+
+                <p>
+                    Understand project performance, track productivity,
+                    and make better decisions with clear reports.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+
+        <div class="section-tag">
+            Get Started Today
+        </div>
+
+        <h2>
+            Ready to Work Smarter?
+        </h2>
+
+        <p>
+            Organize your projects, bring your team together,
+            and make every day more productive with Lunexa.
+        </p>
+
+        <a href="auth/signup.html" class="primary-btn">
+            Create Your Free Account &nbsp; →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            ✦ Lunexa
+        </div>
+
+        <p>
+            © 2026 Lunexa. All Rights Reserved.
+        </p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="pages/projects.html">Projects</a>
+            <a href="pages/team.html">Team</a>
+            <a href="auth/login.html">Login</a>
+        </div>
+
+    </footer>
+
+</body>
+</html>

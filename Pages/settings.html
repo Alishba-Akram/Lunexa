@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunexa - Settings</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white}
+header{background:#10172b;padding:22px 7%}
+header a{color:#a99aff;text-decoration:none}
+main{max-width:850px;margin:40px auto;padding:0 20px}
+.card{background:#151e35;border:1px solid #29314d;border-radius:14px;padding:25px;margin-top:22px}
+p{color:#929bb4;font-size:13px;margin-top:8px;line-height:1.6}
+.setting{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:19px 0;border-bottom:1px solid #303750}
+.setting:last-child{border:0}
+.setting strong{font-size:14px}
+input{accent-color:#9583ff}
+select{background:#0e162b;color:white;border:1px solid #343d5b;padding:10px;border-radius:8px}
+.btn{display:inline-block;background:#7966ed;color:white;text-decoration:none;padding:12px 18px;border-radius:8px;margin-top:20px}
+</style>
+</head>
+<body>
+<header><a href="../index.html">✦ LUNEXA</a></header>
+<main>
+<h1>Settings</h1>
+<p>Customize your workspace preferences and account settings.</p>
+
+<div class="card">
+<h3>General Preferences</h3>
+<div class="setting"><div><strong>Language</strong><p>Choose your preferred language.</p></div><select><option>English</option><option>Urdu</option></select></div>
+<div class="setting"><div><strong>Timezone</strong><p>Set your local timezone.</p></div><select><option>Pakistan (GMT +5)</option><option>UTC</option></select></div>
+<div class="setting"><div><strong>Dark Mode</strong><p>Use the dark appearance for your workspace.</p></div><input type="checkbox" checked></div>
+</div>
+
+<div class="card">
+<h3>Notifications</h3>
+<div class="setting"><div><strong>Email Notifications</strong><p>Receive updates about your projects.</p></div><input type="checkbox" checked></div>
+<div class="setting"><div><strong>Task Reminders</strong><p>Get reminders about upcoming deadlines.</p></div><input type="checkbox" checked></div>
+<div class="setting"><div><strong>Team Updates</strong><p>Receive notifications about team activity.</p></div><input type="checkbox"></div>
+</div>
+
+<div class="card">
+<h3>Security</h3>
+<div class="setting"><div><strong>Change Password</strong><p>Update your account password.</p></div><a href="../auth/forgot-password.html" style="color:#a99aff;text-decoration:none">Update →</a></div>
+<div class="setting"><div><strong>Account Access</strong><p>Manage your login and account access.</p></div><a href="../auth/login.html" style="color:#a99aff;text-decoration:none">Login →</a></div>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunexa - Calendar</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white}
+header{background:#10172b;padding:23px 7%;border-bottom:1px solid #29314d;display:flex;justify-content:space-between}
+header a{color:#a99aff;text-decoration:none}
+main{max-width:1100px;margin:40px auto;padding:0 20px}
+p{color:#929bb4}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;gap:15px}
+.btn{background:#7966ed;padding:12px 18px;color:white;text-decoration:none;border-radius:8px}
+.calendar{background:#151e35;border:1px solid #29314d;border-radius:14px;padding:24px}
+.month{text-align:center;margin-bottom:25px;font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day,.date{min-height:85px;padding:10px;border-radius:8px;background:#1b2540}
+.day{text-align:center;min-height:auto;background:#29254e;color:#b5a8ff;font-size:13px}
+.date{font-size:13px;color:#cdd3e3}
+.event{display:block;margin-top:10px;padding:6px;background:#393264;color:#c4b8ff;border-radius:5px;font-size:10px}
+.event.green{background:#203c37;color:#60d6a6}
+.event.orange{background:#41372a;color:#ffc36b}
+@media(max-width:650px){.calendar{padding:10px}.grid{gap:3px}.date{min-height:65px;padding:5px;font-size:11px}.day{font-size:10px;padding:8px 2px}.event{font-size:8px;padding:4px}.top{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><a href="../index.html">✦ LUNEXA</a><a href="dashboard.html">Dashboard →</a></header>
+<main>
+<div class="top"><div><h1>Calendar</h1><p style="margin-top:8px">View your upcoming tasks and project deadlines.</p></div><a class="btn" href="tasks.html">＋ Add Event</a></div>
+<div class="calendar">
+<div class="month">November 2026</div>
+<div class="grid">
+<div class="day">Sun</div><div class="day">Mon</div><div class="day">Tue</div><div class="day">Wed</div><div class="day">Thu</div><div class="day">Fri</div><div class="day">Sat</div>
+<div class="date">1</div><div class="date">2</div><div class="date">3</div><div class="date">4</div><div class="date">5</div><div class="date">6</div><div class="date">7</div>
+<div class="date">8</div><div class="date">9</div><div class="date">10</div><div class="date">11</div><div class="date">12</div><div class="date">13</div><div class="date">14</div>
+<div class="date">15</div><div class="date">16</div><div class="date">17</div><div class="date">18</div><div class="date">19<span class="event">Homepage</span></div><div class="date">20<span class="event green">API Task</span></div><div class="date">21</div>
+<div class="date">22<span class="event orange">Wireframes</span></div><div class="date">23</div><div class="date">24<span class="event">Testing</span></div><div class="date">25</div><div class="date">26</div><div class="date">27<span class="event green">Review</span></div><div class="date">28</div>
+<div class="date">29</div><div class="date">30</div><div class="date"></div><div class="date"></div><div class="date"></div><div class="date"></div><div class="date"></div>
+</div>
+</div>
+</main>
+</body>
+</html>
